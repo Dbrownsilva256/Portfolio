@@ -6,7 +6,7 @@
 
     <body>
         <h1>Diamond Head</h1>
-        <h3>A styled version of the already famous 'Hawaii' webpage</h3>
+        <h3>A styled version of the already famous Hawaii webpage</h3>
         <div id="map_canvas"></div>
         <script src="mapPage_01.js"></script>
         
