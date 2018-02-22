@@ -5,7 +5,8 @@ function initialize() {
         center: Diamond,
         mapTypeId: google.maps.MapTypeId.HYBRID
     };
- var map = new google.maps.Map(
+    
+    var map = new google.maps.Map(
         document.getElementById("map_canvas"),
         mapOptions);
 }
