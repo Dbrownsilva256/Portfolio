@@ -3,8 +3,7 @@ function initialize() {
     var mapOptions = {
         zoom: 13,
         center: Diamond,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles:[
   {
     "elementType": "geometry",
@@ -224,6 +223,8 @@ function initialize() {
     ]
   }
 ]
+        
+    };
     var map = new google.maps.Map(
         document.getElementById("map_canvas"),
         mapOptions);
