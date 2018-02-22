@@ -3,7 +3,7 @@ function initialize() {
     var mapOptions = {
         zoom: 13,
         center: Diamond,
-        mapTypeId: google.maps.MapTypeId.HYBRID
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     styles:[
   {
