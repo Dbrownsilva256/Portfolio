@@ -18,7 +18,7 @@
           zoom:14,
           center:{lat:21.270734,lng:-157.803682}
         }
-        
+        /*
         var map = new 
         google.maps.Map(document.getElementById('map'), options);
         
@@ -45,6 +45,16 @@
         
         marker.addListener('click',function(){
           infowindow.open(map, marker);
+        });
+        */
+        addMarker({lat:21.262825,lng:-157.805972});
+        addMarker({lat:21.264183,lng:-157.803898});
+        addMarker({lat:21.275476,lng:-157.825868});
+        //add marker fn
+        function addMarker(coords){
+           var marker = new google.maps.Marker({
+          position:coords,
+          map:map,
         });
       }
     </script>
