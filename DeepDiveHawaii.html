@@ -1,5 +1,15 @@
+<head>
+  <style> 
+    #map{
+      height:400px;
+      width:100%;
+<div id="map"></div>
 <script>
-  function initmap(){
+  function initMap(){
     var options = {
       zoom:8,
-      center:
+      center:{lat:21.270734,lng:-157.803682}
+    }
+    var map = new google.map.Map(document.getElementById('map'), options);
+  }
+ <body>
