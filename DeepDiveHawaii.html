@@ -21,6 +21,11 @@
         
         var map = new 
         google.maps.Map(document.getElementById('map'), options);
+        
+        var marker = new googlr.maps.marker({
+          position:{lat:21.270734,lng:-157.803682},
+          map:map
+        });
       }
     </script>
     <script async defer
