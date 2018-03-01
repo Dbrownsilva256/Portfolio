@@ -50,22 +50,22 @@
         */
         addMarker({
           coords:{lat:21.262825,lng:-157.805972},
-          content:'<h1>Diamond Head Crater</h1>
+          content:'<h1>Diamond Head Crater</h1>'
         });
         addMarker({
           coords:{lat:21.264183,lng:-157.803898},
-          content:'<h1>Diamond Head National Monument</h1>
+          content:'<h1>Diamond Head National Monument</h1>'
         });
         addMarker({
           coords:{lat:21.275476,lng:-157.825868},
-          content:'<h1>Waikiki Beach</h1>         
+          content:'<h1>Waikiki Beach</h1>'         
         });
         
         //add marker fn
         function addMarker(props){
          var marker = new google.maps.Marker({
-          position:props.coords,
-          map:map,
+           position:props.coords,
+           map:map,
          });
          if(props.content){
            var infowindow = new google.maps.InfoWindow({
