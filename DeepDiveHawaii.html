@@ -57,7 +57,7 @@
           content:'<h1>Diamond Head National Monument</h1>
         });
         addMarker({
-          coords:{lat:21.275476,lng:-157.825868}
+          coords:{lat:21.275476,lng:-157.825868},
           content:'<h1>Waikiki Beach</h1>         
         });
         
@@ -69,12 +69,13 @@
          });
          if(props.content){
            var infowindow = new google.maps.InfoWindow({
-          content:props.content
-        });
-        
-        marker.addListener('click',function(){
-          infowindow.open(map, marker);
-        });
+             content:props.content
+           });
+           
+           marker.addListener('click', function(){
+             infowindow.open(map, marker);
+           });
+         } 
         }   
       }
     </script>
