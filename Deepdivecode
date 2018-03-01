@@ -1,1 +1,22 @@
 Deep dive polygon code
+// Define the LatLng coordinates for the polygon's path.
+        var DiamondCoords = [
+          {lat: 21.268932, lng: -157.807913},
+          {lat: 21.269157, lng: -157.802767},
+          {lat: 21.264115, lng: -157.797460},
+          {lat: 21.258361, lng: -157.800943},
+          {lat: 21.256820, lng: -157.811398}
+          {lat: 21.260626, lng: -157.815837},
+          {lat: 21.268932, lng: -157.807913}
+        ];
+          
+        // Construct the polygon.
+        var DiamondHead = new google.maps.Polygon({
+          paths: DiamondCoords,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        DiamondHead.setMap(map);
