@@ -1,3 +1,4 @@
+<div id="map_canvas"></div>
 function initialize() {
     var Diamond = new google.maps.LatLng(21.270734,-157.803682)
     var mapOptions = {
