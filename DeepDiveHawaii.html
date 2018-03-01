@@ -48,7 +48,7 @@
         marker.addListener('click',function(){
           infowindow.open(map, marker);
         });
-        
+        /*
         addMarker({
           coords:{lat:21.262825,lng:-157.805972},
           content:'<h1>Diamond Head Crater</h1>',
@@ -76,7 +76,9 @@
          var marker = new google.maps.Marker({
            position:props.coords,
            map:map,
+           
          });
+         */
          if(props.content){
            var infowindow = new google.maps.InfoWindow({
              content:props.content
