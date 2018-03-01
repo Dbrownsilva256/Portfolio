@@ -4,6 +4,10 @@ function initialize() {
         zoom: 13,
         center: Diamond,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
+    var marker = new google.maps.Marker({
+      position:{lat:21.270734,lng:-157.803682},
+      map:map_canvas,
+    });
     styles:[
   {
     "elementType": "geometry",
