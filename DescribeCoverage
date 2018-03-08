@@ -1,0 +1,5 @@
+http://dods.ndbc.noaa.gov/thredds/wcs/hfradar_uswc_500m?
+service=WCS&
+version=1.0.0&
+request=DescribeCoverage&
+COVERAGE=v
