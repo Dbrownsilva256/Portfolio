@@ -5,15 +5,12 @@
     <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
     <script src="https://openlayers.org/en/v4.6.5/build/ol.js"></script>
-    <h1> Custom Openlayers Map </h1>
   </head>
   <body>
     <div id="map" class="map"></div>
     <script>
-      ;
       var point = new OpenLayers.Feature.Vector(
-          new OpenLayers.Geometry.Point(-31.206845,39.442632));
-         
+    new OpenLayers.Geometry.Point(-31.206845,39.442632));
       var openCycleMapLayer = new ol.layer.Tile({
         source: new ol.source.OSM({
           attributions: [
@@ -24,7 +21,6 @@
               '?apikey=853f412896db4349bbab75c38dca7f15'
         })
       });
-
       var openSeaMapLayer = new ol.layer.Tile({
         source: new ol.source.OSM({
           attributions: [
@@ -34,13 +30,11 @@
           opaque: false,
           url: 'https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png'
         })
-      })
-      
+      });
       var map = new ol.Map({
         layers: [
           openCycleMapLayer,
-          openSeaMapLayer,
-          })
+          openSeaMapLayer
         ],
         target: 'map',
         controls: ol.control.defaults({
@@ -54,9 +48,6 @@
           zoom: 11
         })
       });
-      map.addLayer(openCycleMapLayer,
-          openSeaMapLayer);
-      layer.addFeatures([point});
     </script>
   </body>
 </html>
