@@ -19,6 +19,11 @@
           return style;
         }
       });
+       var feature = new OpenLayers.Feature.Vector(
+            new OpenLayers.Geometry.Point( -31.206845,39.442632] )
+            {description:'This is the value of<br>the description attribute'} ,
+            {externalGraphic: './img/marker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25  }
+        );
       var openCycleMapLayer = new ol.layer.Tile({
         source: new ol.source.OSM({
           attributions: [
