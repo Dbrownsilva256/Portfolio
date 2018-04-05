@@ -9,8 +9,16 @@
   <body>
     <div id="map" class="map"></div>
     <script>
-      var point = new OpenLayers.Feature.Vector(
-    new OpenLayers.Geometry.Point(-31.206845,39.442632));
+      var vectorLayer = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          url: 'https://openlayers.org/en/v4.6.5/examples/data/geojson/countries.geojson',
+          format: new ol.format.GeoJSON()
+        }),
+        style: function(feature) {
+          style.getText().setText(feature.get('name'));
+          return style;
+        }
+      });
       var openCycleMapLayer = new ol.layer.Tile({
         source: new ol.source.OSM({
           attributions: [
@@ -34,8 +42,7 @@
       var map = new ol.Map({
         layers: [
           openCycleMapLayer,
-          openSeaMapLayer
-        ],
+          openSeaMapLayer,vectorLayer],
         target: 'map',
         controls: ol.control.defaults({
           attributionOptions: {
