@@ -6,34 +6,5 @@
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
     <script src="https://openlayers.org/en/v4.6.5/build/ol.js"></script>
   </head>
-  <body>
-    <div id="map" class="map"></div>
-    <script>
-      var vectorLayer = new ol.layer.Vector({
-        source: new ol.source.Vector({
-          url: 'https://openlayers.org/en/v4.6.5/examples/data/geojson/countries.geojson',
-          format: new ol.format.GeoJSON()
-        }),
-        style: function(feature) {
-          style.getText().setText(feature.get('name'));
-          return style;
-        }
-      });
-     
-      var map = new ol.Map({
-        layers: [vectorLayer],
-        target: 'map',
-        controls: ol.control.defaults({
-          attributionOptions: {
-            collapsible: false
-          }
-        }),
-        view: new ol.View({
-          maxZoom: 18,
-          center: ol.proj.fromLonLat([-31.206845,39.442632]),
-          zoom: 11
-        })
-      });
-    </script>
-  </body>
+ 
 </html>
