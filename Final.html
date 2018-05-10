@@ -11,21 +11,87 @@
     <title>OpenLayers example</title>
   </head>
   <body>
-    <h2>Final Map</h2>
+    <h2>Final Map 1</h2>
     <div id="map" class="map"></div>
     <script type="text/javascript">
-      var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          })
-        ],
+      var object1 = new ol.layer.Image({
+          source: new ol.source.TileWMS({
+          url: 'http://internetmapping.net:8080/geoserver/wms?',  
+            params: {
+              LAYERS: 'ws_dbrownsilva256:35106-A5',
+              FORMAT: 'image/tif',
+              TRANSPARENT: true
+            },
+            attributions: [
+	            new ol.Attribution({
+		                html: 'Data provided by the GEOG 485 GeoServer.'
+		                })
+	          ]
+	        })
+      })
+      var object2 = new ol.layer.Image({
+          source: new ol.source.TileWMS({
+          url: 'http://internetmapping.net:8080/geoserver/wms?',  
+            params: {
+              LAYERS: 'ws_dbrownsilva256:35106-A6',
+              FORMAT: 'image/tif',
+              TRANSPARENT: true
+            },
+            attributions: [
+	            new ol.Attribution({
+		                html: 'Data provided by the GEOG 485 GeoServer.'
+		                })
+	          ]
+	        })
+      })
+      var object3 = new ol.layer.Tile({
+	            source: new ol.source.TileWMS({
+		                  attributions: new ol.Attribution({
+			                        html: 'A5 Contour'
+		                   }),
+		                   params: {'LAYERS':'ws_dbrownsilva256:35106-A5_CONT'},
+		                   url: 'http://internetmapping.net:8080/geoserver/wms?',
+                       serverType: 'geoserver'
+              })
+      })  
+      var object4 = new ol.layer.Tile({
+	            source: new ol.source.TileWMS({
+		                  attributions: new ol.Attribution({
+			                        html: 'A6 Countours'
+		                   }),
+		                   params: {'LAYERS':'ws_dbrownsilva256:35106-A6_CONT'},
+		                   url: 'http://internetmapping.net:8080/geoserver/wms?',
+                       serverType: 'geoserver'
+              })
+      })  
+       var object5 = new ol.layer.Tile({
+	            source: new ol.source.TileWMS({
+		                  attributions: new ol.Attribution({
+			                        html: 'Roads'
+		                   }),
+		                   params: {'LAYERS':'ws_dbrownsilva256:tgr2006se_bern_lka'},
+		                   url: 'http://internetmapping.net:8080/geoserver/wms?',
+                       serverType: 'geoserver'
+              })
+      })  
+      var tiledMap = new ol.Map({
+	            target: 'map_tiled',
+	            layers: [basemap_tiled,states_tiled], //[basemap_tiled,states_tiled]
+	            view: new ol.View({
+		                  center: ol.proj.fromLonLat([-106.6875233706502, 35.06256538875188]), // the approximate geographic center of the continental US
+		                  zoom: 14,
+		                  projection: 'EPSG:4326'
+		                  })
+              });
+      
+     
+/*
         view: new ol.View({
           center: ol.proj.fromLonLat([-106.6875233706502, 35.06256538875188]),
           zoom: 12
         })
       });
+      */
     </script>
   </body>
 </html>
